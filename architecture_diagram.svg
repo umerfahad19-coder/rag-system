@@ -1,0 +1,56 @@
+<svg width="680" height="808" viewBox="0 0 680 808" xmlns="http://www.w3.org/2000/svg">
+<title>RAG system architecture</title>
+<desc>Eight-stage pipeline: PDF upload, text extraction, text chunking, embedding generation, Pinecone indexing, semantic retrieval, LLM generation, and answer with sources.</desc>
+<style>
+  text { font-family: Arial, Helvetica, sans-serif; fill: #1f2430; }
+  .th { font-size: 15px; font-weight: 600; }
+  .ts { font-size: 12px; fill: #55606e; }
+  .box { stroke-width: 1; rx: 8; }
+</style>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+  <path d="M2 1L8 5L2 9" fill="none" stroke="#55606e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<rect class="box" x="190" y="40" width="300" height="56" rx="8" fill="#F1EFE8" stroke="#888780"/>
+<text class="th" x="340" y="60" text-anchor="middle">PDF upload</text>
+<text class="ts" x="340" y="78" text-anchor="middle">User uploads one or more PDFs</text>
+<line x1="340" y1="96" x2="340" y2="136" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="136" width="300" height="56" rx="8" fill="#E6F1FB" stroke="#378ADD"/>
+<text class="th" x="340" y="156" text-anchor="middle">Text extraction</text>
+<text class="ts" x="340" y="174" text-anchor="middle">Extract and clean page text</text>
+<line x1="340" y1="192" x2="340" y2="232" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="232" width="300" height="56" rx="8" fill="#E6F1FB" stroke="#378ADD"/>
+<text class="th" x="340" y="252" text-anchor="middle">Text chunking</text>
+<text class="ts" x="340" y="270" text-anchor="middle">Sentence-aware overlapping chunks</text>
+<line x1="340" y1="288" x2="340" y2="328" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="328" width="300" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75"/>
+<text class="th" x="340" y="348" text-anchor="middle">Embedding generation</text>
+<text class="ts" x="340" y="366" text-anchor="middle">Converts chunks to vectors</text>
+<line x1="340" y1="384" x2="340" y2="424" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="424" width="300" height="56" rx="8" fill="#E1F5EE" stroke="#1D9E75"/>
+<text class="th" x="340" y="444" text-anchor="middle">Pinecone indexing</text>
+<text class="ts" x="340" y="462" text-anchor="middle">Upsert vectors with metadata</text>
+<line x1="340" y1="480" x2="340" y2="520" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="520" width="300" height="56" rx="8" fill="#EEEDFE" stroke="#7F77DD"/>
+<text class="th" x="340" y="540" text-anchor="middle">Semantic retrieval</text>
+<text class="ts" x="340" y="558" text-anchor="middle">Top-k cosine similarity search</text>
+<line x1="340" y1="576" x2="340" y2="616" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="616" width="300" height="56" rx="8" fill="#EEEDFE" stroke="#7F77DD"/>
+<text class="th" x="340" y="636" text-anchor="middle">LLM generation</text>
+<text class="ts" x="340" y="654" text-anchor="middle">Answers strictly from context</text>
+<line x1="340" y1="672" x2="340" y2="712" stroke="#55606e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<rect class="box" x="190" y="712" width="300" height="56" rx="8" fill="#FAECE7" stroke="#D85A30"/>
+<text class="th" x="340" y="732" text-anchor="middle">Answer with sources</text>
+<text class="ts" x="340" y="750" text-anchor="middle">Page, excerpt, similarity score</text>
+
+<text x="340" y="798" text-anchor="middle" font-size="11" fill="#9ca3af">RAG System Architecture — Developed by: Hanzala Bajwa</text>
+</svg>
